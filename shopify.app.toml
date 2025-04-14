@@ -3,11 +3,13 @@
 client_id = "689a26aa08ca994c39fb72e02b4b4c27"
 name = "shop-test-app"
 handle = "shop-test-app-45"
-application_url = "https://example.com/"
+application_url = "https://sun-fog-prescription-computer.trycloudflare.com"
 embedded = true
 
 [build]
 include_config_on_deploy = true
+dev_store_url = "frontend-stop-test-app.myshopify.com"
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-04"
@@ -25,7 +27,11 @@ api_version = "2025-04"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://sun-fog-prescription-computer.trycloudflare.com/auth/callback",
+  "https://sun-fog-prescription-computer.trycloudflare.com/auth/shopify/callback",
+  "https://sun-fog-prescription-computer.trycloudflare.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
